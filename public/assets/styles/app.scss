@@ -1,0 +1,16 @@
+$dark-primary-color: #512da8;
+$light-primary-color: #d1c4e9;
+$primary-color: #673ab7;
+$text-icons: #ffff;
+$background-color: #000000ce;
+$primary-text: #757575;
+$divider-color: #bdbdbd;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
