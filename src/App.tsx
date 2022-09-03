@@ -1,9 +1,9 @@
-import Formulario from "./components/Form";
+import Cadastro from "./view/Cadastro";
 
 function App() {
   return (
     <div className="App">
-      <Formulario />
+      <Cadastro />
     </div>
   );
 }

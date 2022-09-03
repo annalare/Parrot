@@ -1,0 +1,14 @@
+@import "../../assets/styles/variable.scss";
+
+.backgroundForms {
+  background-image: url("../../assets/img/background.png");
+  background-color: $background-color;
+  background-size: cover;
+  background-repeat: repeat;
+  width: 100vw;
+  height: 100vh;
+}
+.cardForm {
+  width: 25rem;
+  height: 36rem;
+}

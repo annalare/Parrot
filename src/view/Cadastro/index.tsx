@@ -1,5 +1,11 @@
+import Formulario from "../../components/Form";
+import "./cadastro.scss";
 const Cadastro = () => {
-  return <div></div>;
+  return (
+    <div className="backgroundForms">
+      <Formulario />
+    </div>
+  );
 };
 
 export default Cadastro;
