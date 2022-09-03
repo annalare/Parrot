@@ -3,14 +3,7 @@ $light-primary-color: #d1c4e9;
 $primary-color: #673ab7;
 $text-icons: #ffff;
 $background-color: #000000ce;
+$accent-color: #8bc34a;
+$hover: #a5ce77;
 $primary-text: #757575;
 $divider-color: #bdbdbd;
-
-@import "../node_modules/bootstrap/scss/bootstrap";
-
-* {
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-}

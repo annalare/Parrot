@@ -1,0 +1,10 @@
+@import "../../assets/styles/variable.scss";
+
+.button {
+  background-color: $accent-color;
+  border: none;
+  color: black;
+  &:hover {
+    background-color: $hover;
+  }
+}
