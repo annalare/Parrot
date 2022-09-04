@@ -1,3 +1,9 @@
+import NavbarParrot from "../../components/NavbarParrot";
+
 export default function Profile() {
-  return <div></div>;
+  return (
+    <div>
+      <NavbarParrot />
+    </div>
+  );
 }
