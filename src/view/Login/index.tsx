@@ -1,1 +1,4 @@
-export default function Login() {}teste teste
+export default function Profile() {
+    return <div></div>;
+  }
+  
