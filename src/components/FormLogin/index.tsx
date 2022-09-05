@@ -47,7 +47,9 @@ export default function FormLogin() {
               entrar
             </Button>
             <FormGroup className="cadastrarLink">
-              <Link to={"/register"}>Cadastre-se</Link>
+              <Link className="linkTo" to={"/register"}>
+                Cadastre-se
+              </Link>
             </FormGroup>
           </Form>
         </Card>

@@ -2,12 +2,12 @@ import Button from "react-bootstrap/Button";
 import { Form, Card } from "react-bootstrap";
 import { useState } from "react";
 import "./formregister.scss";
-const [nome, setNome] = useState<string>("");
-const [email, setEmail] = useState<string>("");
-const [senha, setSenha] = useState<string>("");
-const [confirmarSenha, setConfirmarSenha] = useState<string>("");
-const [apartamento, setApartamento] = useState<string>("");
 const Formulario = () => {
+  const [nome, setNome] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [senha, setSenha] = useState<string>("");
+  const [confirmarSenha, setConfirmarSenha] = useState<string>("");
+  const [apartamento, setApartamento] = useState<string>("");
   return (
     <div>
       <div
