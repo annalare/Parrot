@@ -1,8 +1,12 @@
 import Button from "react-bootstrap/Button";
 import { Form, Card } from "react-bootstrap";
-
+import { useState } from "react";
 import "./formregister.scss";
-
+const [nome, setNome] = useState<string>("");
+const [email, setEmail] = useState<string>("");
+const [senha, setSenha] = useState<string>("");
+const [confirmarSenha, setConfirmarSenha] = useState<string>("");
+const [apartamento, setApartamento] = useState<string>("");
 const Formulario = () => {
   return (
     <div>
@@ -22,6 +26,8 @@ const Formulario = () => {
                 className="inputTexto"
                 type="text"
                 placeholder="nome"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
               />
             </Form.Group>
             <Form.Group className=" boxform p-3" controlId="formBasicEmail">
@@ -29,6 +35,8 @@ const Formulario = () => {
                 className="inputTexto"
                 type="email"
                 placeholder="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
@@ -37,6 +45,8 @@ const Formulario = () => {
                 className="inputTexto"
                 type="password"
                 placeholder="senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="p-3 boxform" controlId="formBasicPassword">
@@ -44,6 +54,8 @@ const Formulario = () => {
                 className="inputTexto"
                 type="password"
                 placeholder="confirmar senha"
+                value={confirmarSenha}
+                onChange={(e) => setConfirmarSenha(e.target.value)}
               />
             </Form.Group>
 
@@ -52,15 +64,17 @@ const Formulario = () => {
                 className="inputTexto"
                 type="text"
                 placeholder="unidade/apartamento"
+                value={apartamento}
+                onChange={(e) => setApartamento(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="p-3 boxform" controlId="formBasicEmail">
+            {/* <Form.Group className="p-3 boxform" controlId="formBasicEmail">
               <Form.Control
                 className="inputTexto"
                 type="text"
                 placeholder="link da foto"
               />
-            </Form.Group>
+            </Form.Group> */}
             <Button className="button" type="submit">
               entrar
             </Button>

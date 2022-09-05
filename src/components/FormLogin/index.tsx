@@ -1,6 +1,12 @@
+import { useState } from "react";
 import { Card, Form, Button, FormControl, FormGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./formlogin.scss";
+
 export default function FormLogin() {
+  const [email, setEmail] = useState<string>("");
+  const [senha, setSenha] = useState<string>("");
+
   return (
     <div>
       <div
@@ -20,6 +26,8 @@ export default function FormLogin() {
                 className="inputTexto"
                 type="email"
                 placeholder="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
@@ -31,13 +39,15 @@ export default function FormLogin() {
                 className="inputTexto"
                 type="password"
                 placeholder="senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
               />
             </Form.Group>
             <Button className="button" type="submit">
               entrar
             </Button>
             <FormGroup className="cadastrarLink">
-              <a href="#"> Cadastre-se</a>
+              <Link to={"/register"}>Cadastre-se</Link>
             </FormGroup>
           </Form>
         </Card>
