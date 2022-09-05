@@ -9,11 +9,12 @@
   .inputTexto {
     font-size: 24px;
     font-weight: 400;
-
+    align-items: center;
+    justify-content: center;
     width: 21rem;
   }
 }
-.boxform {
+.boxformlogin {
   align-items: center;
   display: flex;
   justify-content: center;

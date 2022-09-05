@@ -1,3 +1,10 @@
+import NavbarParrot from "../../components/NavbarParrot";
+import Usuario from "../../components/Usuario";
+
 export default function Feed() {
-  return <div></div>;
+  return (
+    <div>
+      <NavbarParrot />
+    </div>
+  );
 }

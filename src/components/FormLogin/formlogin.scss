@@ -3,5 +3,18 @@
   width: 33rem;
   height: 35rem;
   padding-bottom: 40rem;
+  padding-top: 5rem;
   margin-bottom: 15rem;
+}
+.cadastrarLink {
+  text-decoration: none;
+  padding: 4rem;
+  font-size: 21px;
+  color: black;
+  a {
+    text-decoration: none;
+  }
+}
+.inputTexto {
+  text-align: center;
 }

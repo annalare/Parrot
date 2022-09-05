@@ -1,0 +1,13 @@
+@import "../../assets/styles/variable.scss";
+.helloUser {
+  font-size: 24px;
+  color: $accent-color;
+  font-weight: 500;
+  a {
+    color: $primary-color;
+    font-weight: 500;
+  }
+}
+// .containerNavbar {
+//   border: 1px solid #c5c5c5;
+// }

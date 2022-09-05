@@ -1,4 +1,4 @@
-import { Card, Form, Button } from "react-bootstrap";
+import { Card, Form, Button, FormControl, FormGroup } from "react-bootstrap";
 import "./formlogin.scss";
 export default function FormLogin() {
   return (
@@ -12,7 +12,10 @@ export default function FormLogin() {
             <img src="/assets/img/logo-colorido.png" alt="" />
             <h3> LOGIN</h3>
 
-            <Form.Group className=" boxform p-3" controlId="formBasicEmail">
+            <Form.Group
+              className=" boxformlogin p-3"
+              controlId="formBasicEmail"
+            >
               <Form.Control
                 className="inputTexto"
                 type="email"
@@ -20,7 +23,10 @@ export default function FormLogin() {
               />
             </Form.Group>
 
-            <Form.Group className=" boxform p-3" controlId="formBasicPassword">
+            <Form.Group
+              className=" boxformlogin p-3"
+              controlId="formBasicPassword"
+            >
               <Form.Control
                 className="inputTexto"
                 type="password"
@@ -30,6 +36,9 @@ export default function FormLogin() {
             <Button className="button" type="submit">
               entrar
             </Button>
+            <FormGroup className="cadastrarLink">
+              <a href="#"> Cadastre-se</a>
+            </FormGroup>
           </Form>
         </Card>
       </div>
