@@ -1,5 +1,5 @@
 import NavbarParrot from "../../components/NavbarParrot";
-import Timeline from "../../components/Timeline";
+import Timeline from "../../components/EmptyFeed";
 import Usuario from "../../components/Usuario";
 import "./profile.scss";
 export default function Profile() {

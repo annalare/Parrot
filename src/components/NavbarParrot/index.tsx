@@ -1,11 +1,11 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 
 import "./navbar.scss";
 export default function NavbarParrot() {
   return (
     <div>
-      <Navbar bg="white">
-        <Container className="containerNavbar">
+      <Navbar bg="white header">
+        <Container fluid className="containerNavbar">
           <Navbar.Brand href="#home">
             <img
               src="../assets/img/logohorizontalcolorido.png"

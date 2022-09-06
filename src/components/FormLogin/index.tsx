@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { Card, Form, Button, FormControl, FormGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./formlogin.scss";
@@ -7,6 +7,14 @@ export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
   const [senha, setSenha] = useState<string>("");
 
+  const submit = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+      const response = await login({ email, senha });
+    } catch (error) {
+      alert("Deu algo errado");
+    }
+  };
   return (
     <div>
       <div

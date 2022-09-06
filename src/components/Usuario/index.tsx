@@ -1,8 +1,13 @@
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import "./usuario.scss";
 export default function Usuario() {
   return (
-    <div className="containerUsuarioProfile">
+    <Container
+      fluid
+      className="containerUsuarioProfile
+       h-100 w-75 d-flex align-itens-center 
+    justify-content-center"
+    >
       <div className="user-container">
         <img
           src="/assets/img/profile1.png"
@@ -22,6 +27,6 @@ export default function Usuario() {
           </Button>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
