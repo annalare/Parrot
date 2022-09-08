@@ -10,7 +10,7 @@ export default function AppRoutes() {
         <Route path="/" element={<Feed />} />
         <Route path="/register" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:id" element={<Profile />} />
       </Routes>
     </Router>
   );

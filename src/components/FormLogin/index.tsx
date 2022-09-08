@@ -2,17 +2,29 @@ import { FormEvent, useState } from "react";
 import { Card, Form, Button, FormControl, FormGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./formlogin.scss";
+import { login } from "../../services/login";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store/modules/users";
 
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
-  const [senha, setSenha] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const dispatch = useDispatch();
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     try {
-      const response = await login({ email, senha });
+      const response = await login({ email, password });
+      console.log(response.data);
+      dispatch(
+        setUser({
+          token: response.data.token,
+          id: response.data.id,
+        })
+      );
+      alert("Deu certo");
     } catch (error) {
-      alert("Deu algo errado");
+      console.log(error);
     }
   };
   return (
@@ -22,7 +34,7 @@ export default function FormLogin() {
         justify-content-center  "
       >
         <Card className="cardFormLogin ">
-          <Form className="formulario text-center">
+          <Form className="formulario text-center" onSubmit={submit}>
             <img src="/assets/img/logo-colorido.png" alt="" />
             <h3> LOGIN</h3>
 
@@ -47,8 +59,8 @@ export default function FormLogin() {
                 className="inputTexto"
                 type="password"
                 placeholder="senha"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
             <Button className="button" type="submit">
