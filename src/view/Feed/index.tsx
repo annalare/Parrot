@@ -1,10 +1,14 @@
+import ComentRegister from "../../components/ComentRegister";
+import ComentsFeed from "../../components/ComentsFeed";
 import NavbarParrot from "../../components/NavbarParrot";
-import Usuario from "../../components/Usuario";
+import "./feed.scss";
 
 export default function Feed() {
   return (
-    <div>
+    <>
       <NavbarParrot />
-    </div>
+      <ComentRegister />
+      <ComentsFeed/>
+    </>
   );
 }

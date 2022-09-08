@@ -5,7 +5,7 @@ export default function NavbarParrot() {
   return (
     <div>
       <Navbar bg="white">
-        <Container className="containerNavbar">
+        <Container fluid className="containerNavbar">
           <Navbar.Brand href="#home">
             <img
               src="../assets/img/logohorizontalcolorido.png"
