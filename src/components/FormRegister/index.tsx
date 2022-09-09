@@ -1,13 +1,45 @@
 import Button from "react-bootstrap/Button";
 import { Form, Card } from "react-bootstrap";
-import { useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import "./formregister.scss";
+import { cadastro } from "../../services/userServices";
+import { useNavigate } from "react-router-dom";
 const Formulario = () => {
-  const [nome, setNome] = useState<string>("");
+  const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const [senha, setSenha] = useState<string>("");
-  const [confirmarSenha, setConfirmarSenha] = useState<string>("");
-  const [apartamento, setApartamento] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmarPassword, setConfirmarPassword] = useState<string>("");
+  const [apartment, setApartment] = useState<string>("");
+  const [wrongPass, setWrongPass] = useState<string>("");
+
+  const navigate = useNavigate();
+
+  const submit = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+      await cadastro({
+        name,
+        email,
+        password,
+        apartment: parseInt(apartment),
+      });
+
+      alert("Usuário cadastrado com sucesso");
+
+      navigate("/login");
+    } catch (error) {
+      alert("Opa! Deu algo errado!");
+    }
+  };
+
+  useEffect(() => {
+    if (password !== confirmarPassword) {
+      setWrongPass("wrong-password");
+    } else {
+      setWrongPass("");
+    }
+  }, [confirmarPassword]);
+
   return (
     <div>
       <div
@@ -15,7 +47,7 @@ const Formulario = () => {
         justify-content-center  "
       >
         <Card className="cardForm ">
-          <Form className="formulario text-center">
+          <Form className="formulario text-center" onSubmit={submit}>
             <img src="/assets/img/logo-colorido.png" alt="" />
             <h3> CADASTRO</h3>
             <Form.Group
@@ -26,11 +58,11 @@ const Formulario = () => {
                 className="inputTexto"
                 type="text"
                 placeholder="nome"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className=" boxform p-3" controlId="formBasicEmail">
+            <Form.Group className="boxform p-3" controlId="formBasicEmail">
               <Form.Control
                 className="inputTexto"
                 type="email"
@@ -45,17 +77,17 @@ const Formulario = () => {
                 className="inputTexto"
                 type="password"
                 placeholder="senha"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="p-3 boxform" controlId="formBasicPassword">
               <Form.Control
-                className="inputTexto"
+                className={`inputTexto ${wrongPass}`}
                 type="password"
                 placeholder="confirmar senha"
-                value={confirmarSenha}
-                onChange={(e) => setConfirmarSenha(e.target.value)}
+                value={confirmarPassword}
+                onChange={(e) => setConfirmarPassword(e.target.value)}
               />
             </Form.Group>
 
@@ -64,8 +96,8 @@ const Formulario = () => {
                 className="inputTexto"
                 type="text"
                 placeholder="unidade/apartamento"
-                value={apartamento}
-                onChange={(e) => setApartamento(e.target.value)}
+                value={apartment}
+                onChange={(e) => setApartment(e.target.value)}
               />
             </Form.Group>
             {/* <Form.Group className="p-3 boxform" controlId="formBasicEmail">

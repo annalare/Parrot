@@ -1,20 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Cadastro from "./view/Cadastro";
-import Feed from "./view/Feed";
-import Login from "./view/Login";
-import Profile from "./view/Profile";
+import { Dispatch } from "@reduxjs/toolkit";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import AppRoutes from "./routes";
+import { getUser } from "./store/modules/users";
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Feed />} />
-        <Route path="/register" element={<Cadastro />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </Router>
-  );
+  const dispatch: Dispatch<any> = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+
+  return <AppRoutes />;
 }
 
 export default App;

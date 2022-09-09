@@ -1,12 +1,32 @@
-import { useState } from "react";
-import { Card, Form, Button, FormControl, FormGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { FormEvent, useState } from "react";
+import { Card, Form, Button, FormGroup } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import "./formlogin.scss";
+import { login } from "../../services/userServices";
+import { useDispatch } from "react-redux";
+import { getUser, setUser } from "../../store/modules/users";
+import { Dispatch } from "@reduxjs/toolkit";
 
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
-  const [senha, setSenha] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const dispatch: Dispatch<any> = useDispatch();
+  const navigate = useNavigate();
 
+  const submit = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+      const response = await login({ email, password });
+
+      window.localStorage.setItem("token", response.data.token);
+      window.localStorage.setItem("id", response.data.id);
+      dispatch(getUser());
+
+      navigate("/");
+    } catch (error) {
+      alert("Opa! Deu algo errado!");
+    }
+  };
   return (
     <div>
       <div
@@ -14,7 +34,7 @@ export default function FormLogin() {
         justify-content-center  "
       >
         <Card className="cardFormLogin ">
-          <Form className="formulario text-center">
+          <Form className="formulario text-center" onSubmit={submit}>
             <img src="/assets/img/logo-colorido.png" alt="" />
             <h3> LOGIN</h3>
 
@@ -39,8 +59,8 @@ export default function FormLogin() {
                 className="inputTexto"
                 type="password"
                 placeholder="senha"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
             <Button className="button" type="submit">

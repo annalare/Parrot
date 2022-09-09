@@ -1,8 +1,26 @@
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import "./usuario.scss";
-export default function Usuario() {
+
+interface UserData {
+  id: number;
+  name: string;
+  email: string;
+  apartment: number;
+}
+
+interface Props {
+  userData: UserData;
+  qtdMessages: number;
+}
+
+export default function Usuario({ userData, qtdMessages }: Props) {
   return (
-    <div className="containerUsuarioProfile">
+    <Container
+      fluid
+      className="containerUsuarioProfile
+       h-100 w-75 d-flex align-itens-center 
+    justify-content-center"
+    >
       <div className="user-container">
         <img
           src="/assets/img/profile1.png"
@@ -11,10 +29,10 @@ export default function Usuario() {
           className="d-block"
         />
         <div className="px-4 mx-4 containerPerfil">
-          <h2>Nome Sobrenome</h2>
-          <p>apê 222</p>
-          <p>user@email.com</p>
-          <>0 publicações</>
+          <h2>{userData?.name}</h2>
+          <p>apê {userData?.apartment}</p>
+          <p>{userData?.email}</p>
+          <>{qtdMessages} publicações</>
         </div>
         <div className="px-4">
           <Button className="buttonProfile" type="submit">
@@ -22,6 +40,6 @@ export default function Usuario() {
           </Button>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }

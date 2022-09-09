@@ -31,3 +31,9 @@
     color: #000;
   }
 }
+
+.wrong-password {
+  &:focus {
+    border: 5px solid rgba(255, 0, 0, 0.555);
+  }
+}

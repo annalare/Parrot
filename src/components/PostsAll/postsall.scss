@@ -1,0 +1,18 @@
+@import "../../assets/styles/variable.scss";
+.card {
+  border-top: none;
+}
+
+.perfil-img {
+  width: 5rem;
+  height: 5.2rem;
+  display: flex;
+}
+.details {
+  display: flex;
+}
+h4 {
+  font-size: 18px;
+  color: $accent-color;
+  font-weight: 500;
+}

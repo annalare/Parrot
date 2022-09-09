@@ -1,0 +1,36 @@
+@import "../../assets/styles/variable.scss";
+.carduser {
+  border-top: none;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.perfil-img {
+  width: 5rem;
+  height: 5rem;
+} // posso fazer aqui um styled component
+
+.botao-publicar {
+  width: 8rem;
+  height: 2srem;
+  background: $primary-color;
+  border: $primary-color;
+  border-radius: 30px;
+  font-size: 16px;
+  line-height: 16px;
+  &:hover {
+    background: $secondary-color;
+  }
+}
+.cardbody {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .texto {
+    border: 1px solid $accent-color;
+    display: flex;
+    width: 30rem;
+    flex-wrap: wrap;
+  }
+}
