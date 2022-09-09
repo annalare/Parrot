@@ -32,26 +32,9 @@ Foi desenvolvido uma API para criar registros e altenticação de moradores e ad
 
 ---
 
-## :file_folder: Funcionalidades na API
-
-Na tela de Login temos:
-- Post/Login
-Na tela de Cadastro temos:
-- Post/Cadastrar
-Na tela de Usuário temos:
-- Put/Editar
-- Delete/Soft Delete
-Na tela do Feed temos 
-- Get/Listar
-- Post/Cadastrar
-
----
-
 ## :floppy_disk: Parte Back-end realizada separadamente através do repositório:
 
 <a href="https://github.com/danilojpfreitas/Hands_On_4_Parrot">Parte Back-end do Parrot</a></br>
-
-![Img](https://res.cloudinary.com/practicaldev/image/fetch/s--ij76xPn8--/c_imagga_scale,f_auto,fl_progressive,h_1080,q_auto,w_1080/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/48ghtojaad5z8uwdtcgf.png)
 
 ---
 
