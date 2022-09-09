@@ -15,6 +15,8 @@ interface Props {
 }
 
 export default function Usuario({ userData, qtdMessages }: Props) {
+  const id = window.localStorage.getItem("id");
+
   return (
     <Container className="containerUsuarioProfile">
       <div className="user-container d-flex justify-content-around w-75">
@@ -33,9 +35,11 @@ export default function Usuario({ userData, qtdMessages }: Props) {
           </div>
         </div>
         <div className="">
-          <Link to={"/editar"}>
-            <Button className="buttonProfile">editar perfil</Button>
-          </Link>
+          {userData?.id == parseInt(id!) && (
+            <Link to={"/editar"}>
+              <Button className="buttonProfile">editar perfil</Button>
+            </Link>
+          )}
         </div>
       </div>
     </Container>

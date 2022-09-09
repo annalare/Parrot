@@ -33,11 +33,11 @@ export default function NavbarParrot() {
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="helloUser">
               Olá,{" "}
-              <Link to={`/profile/${user.id}`}>
+              <Link className="linkName" to={`/profile/${user.id}`}>
                 {user.name?.split(" ")[0] || "Usuário"}
               </Link>
               <button className="buttonExit" onClick={exit}>
-                sair
+                | sair
               </button>
             </Navbar.Text>
           </Navbar.Collapse>
