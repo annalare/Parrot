@@ -5,10 +5,9 @@
 ## 💻 Sobre o projeto
 
 <br>
+ - Projeto desenvolvido durante o desafio **Hands On 4** oferecido pela **Gama Academy**. 
 - Este projeto apresenta um sistema white label, que seria uma rede social fornecida para que condominios incentivem a interação entre seus moradores.
-Foi desenvolvido uma API para criar registros e altenticação de moradores e administradores, permitindo a edição de perfil e dados dos usuários, bem como a criação e listagem de posts ao melhor estilo Twitter.
-
-- Projeto desenvolvido durante o desafio **Hands On 4** oferecido pela **Gama Academy**.
+- Foi consumida uma API para criar registros de users dos moradores, permitindo a criação, edição de perfil, posts de mensagens para os moradores e listagem de dados dos usuários, no estilo do conhecido Twitter.
 
 ---
 
