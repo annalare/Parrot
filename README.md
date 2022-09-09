@@ -13,23 +13,15 @@
 
 ## :mortar_board: Descrição das Funcionalidades
 
-- Login:
-  Foi feito um CRUD para poder receber as credenciais para acessar com seu usuário
-  <br>
-
-- Cadastro de usuário :
-  Neste CRUD feito para os moradores podemos realizar o cadastro que vai nos permitir interagir com outros moradores através dos posts no feed.
-  <br>
-
-- Feed:
-  no feed podemos realizar um comentário e postar no feed, o comentario trás informações de usuário cadastrado juntamente com data e hora do post.
-  <br>
+- Login
+- Cadastro de usuário
+- Perfil do usuário
+- Feed
+- Visita de Perfil
+- Edição de dados do usuário
 
 - Página do usuario:
   Podemos verificar os posts realizados pelo usuário logado e também realizar alterações do perfil, como nome,email, senha e apartamento em que mora ou é responsável .
-  <br>
-
----
 
 ## :floppy_disk: Parte Back-end realizada separadamente através do repositório:
 
