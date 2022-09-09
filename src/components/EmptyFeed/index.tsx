@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import "./emptyfeed.scss";
-export default function Timeline() {
+export default function EmptyFeed() {
   return (
     <div>
       <Container

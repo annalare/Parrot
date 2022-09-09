@@ -1,30 +1,30 @@
 import { FormEvent, useState } from "react";
-import { Card, Form, Button, FormControl, FormGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Card, Form, Button, FormGroup } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import "./formlogin.scss";
-import { login } from "../../services/login";
+import { login } from "../../services/userServices";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../store/modules/users";
+import { getUser, setUser } from "../../store/modules/users";
+import { Dispatch } from "@reduxjs/toolkit";
 
 export default function FormLogin() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const dispatch = useDispatch();
+  const dispatch: Dispatch<any> = useDispatch();
+  const navigate = useNavigate();
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     try {
       const response = await login({ email, password });
-      console.log(response.data);
-      dispatch(
-        setUser({
-          token: response.data.token,
-          id: response.data.id,
-        })
-      );
-      alert("Deu certo");
+
+      window.localStorage.setItem("token", response.data.token);
+      window.localStorage.setItem("id", response.data.id);
+      dispatch(getUser());
+
+      navigate("/");
     } catch (error) {
-      console.log(error);
+      alert("Opa! Deu algo errado!");
     }
   };
   return (

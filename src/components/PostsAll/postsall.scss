@@ -1,3 +1,4 @@
+@import "../../assets/styles/variable.scss";
 .card {
   border-top: none;
 }
@@ -9,4 +10,9 @@
 }
 .details {
   display: flex;
+}
+h4 {
+  font-size: 18px;
+  color: $accent-color;
+  font-weight: 500;
 }
