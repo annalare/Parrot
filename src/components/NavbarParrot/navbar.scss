@@ -1,13 +1,14 @@
 @import "../../assets/styles/variable.scss";
 .helloUser {
-  font-size: 24px;
-  color: $accent-color;
-  font-weight: 500;
-  a {
-    color: $primary-color;
+    font-size: 24px;
+    color: $accent-color;
     font-weight: 500;
-  }
+    a {
+        color: $primary-color;
+        font-weight: 500;
+    }
 }
+
 .containerNavbar {
   width: 100vw;
 }
@@ -21,3 +22,4 @@
   background-color: #ffff;
   color: $dark-primary-color;
 }
+
