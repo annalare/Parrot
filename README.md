@@ -1,4 +1,4 @@
-<h1 align=center> parrot </hi> <br>
+ <br>
 
 <img src="./public/assets/img/logohorizontalcolorido.png" alt="Logo da parrot">
 
@@ -29,23 +29,22 @@
 As seguintes ferramentas foram usadas na construção do projeto:
 <br><br>
 
+<div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" width="52" alt="typescript logo"  />
   
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="40" width="52" alt="sass logo"  />
 
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" width="52" alt="bootstrap logo"  />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" width="52" alt="bootstrap logo"  /> </div>
 
 <h2> 👨‍💻 Contribuidores </h2><br>
 
-<h3>Front End </h3>
 <table align=center>
   <tr>
    <td align="center"> <img src="https://avatars.githubusercontent.com/u/83883968?v=4" width=175/></br><a href="https://www.linkedin.com/in/annalare/"> Ana Larissa </a>
    </td>
    <td align="center"> <img src="./public/assets/img/WhatsApp Image 2022-09-08 at 23.32.15.jpeg"  width=175/></br><a href="https://www.linkedin.com/in/eduardo-almeida-de-jesus-0b2971206/"> Eduardo Almeida</a>
    </td>
-   <h3>Back End </h3>
    <tr>
     <td align="center"> <img src="https://avatars.githubusercontent.com/u/104531640?v=4"  width=175/></br><a href="https://www.linkedin.com/in/danilo-freitas-dev/">Danilo Freitas</a>
    </td>
