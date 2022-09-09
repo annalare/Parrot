@@ -22,7 +22,7 @@
 
 ## :floppy_disk: Parte Back-end realizada separadamente através do repositório:
 
-<a href="https://github.com/danilojpfreitas/Hands_On_4_Parrot">Parte Back-end do Parrot</a></br>
+<a href="https://github.com/danilojpfreitas/Hands_On_04_Typeorm">Parte Back-end do Parrot</a></br>
 
 ## 🛠 Tecnologias
 
