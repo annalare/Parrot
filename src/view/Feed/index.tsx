@@ -43,7 +43,7 @@ export default function Feed() {
             content={message.content}
             created_at={message.created_at}
             name={message.user_id.name}
-            apartment={message.user_id.name}
+            apartment={message.user_id.apartment}
           />
         ))
       ) : (

@@ -1,8 +1,8 @@
 @import "../../assets/styles/variable.scss";
 .carduser {
   border-top: none;
-
   display: flex;
+
   flex-wrap: wrap;
 }
 
@@ -13,24 +13,24 @@
 
 .botao-publicar {
   width: 8rem;
-  height: 2srem;
+  height: 2rem;
   background: $primary-color;
   border: $primary-color;
   border-radius: 30px;
   font-size: 16px;
   line-height: 16px;
+  margin-right: 20px;
   &:hover {
     background: $secondary-color;
   }
 }
 .cardbody {
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   .texto {
     border: 1px solid $accent-color;
-    display: flex;
-    width: 30rem;
     flex-wrap: wrap;
+    resize: none;
   }
 }

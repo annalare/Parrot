@@ -20,22 +20,25 @@ export default function PostsAll({
   return (
     <div>
       <Container className="d-flex justify-content-center">
-        <Card id="card" className="d-flex w-75 shadow-sm ">
-          <Card.Body className=" d-flex justify-content-around d-flex">
+        <Card id="card" className=" w-75 shadow-sm">
+          <Card.Body className=" d-flex w-100 justify-content-start p-4 d-flex">
             <Card.Img
               src="../assets/img/profile2.png"
               alt="perfil"
-              className="perfil-img pt-2"
+              className="perfil-img"
             />
-            <Card.Text className="details d-flex flex-column">
-              <div className="userStatus flex-start">
-                <h4>
-                  <Link to={`/profile/${id}`}>{name}</Link>
+            <Card.Text className="d-flex flex-column px-4 w-100">
+              <div className="userStatus d-flex flex-column">
+                <h4 className="">
+                  <Link className="link" to={`/profile/${id}`}>
+                    {`${name} - apê ${apartment}`}
+                  </Link>
                 </h4>
-                <p>apê {apartment}</p>
-                <p>{formataData(new Date(created_at))}</p>
+                <div className="d-flex flex-column">
+                  <p className="hora">{formataData(new Date(created_at))}</p>
+                </div>
+                <span className="d-flex w-100">{content}</span>
               </div>
-              <span className="d-flex w-50">{content}</span>
             </Card.Text>
           </Card.Body>
         </Card>

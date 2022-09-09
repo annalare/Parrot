@@ -1,36 +1,44 @@
 import Button from "react-bootstrap/Button";
 import { Form, Card } from "react-bootstrap";
 import { FormEvent, useEffect, useState } from "react";
-import "./formregister.scss";
-import { cadastro } from "../../services/userServices";
+import "./formupdate.scss";
+import { editarUsuario } from "../../services/userServices";
 import { useNavigate } from "react-router-dom";
-export default function FormRegister() {
+import { useSelector } from "react-redux";
+import { RootStore } from "../../store";
+export default function FormUpdate() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmarPassword, setConfirmarPassword] = useState<string>("");
-  const [apartment, setApartment] = useState<string>("");
+  const [apartment, setApartment] = useState<string | number>("");
   const [wrongPass, setWrongPass] = useState<string>("");
 
   const navigate = useNavigate();
-
+  const user = useSelector((store: RootStore) => store.userReduce);
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     try {
-      await cadastro({
+      await editarUsuario(user.id, {
         name,
         email,
         password,
-        apartment: parseInt(apartment),
+        apartment: parseInt(apartment as string),
       });
 
-      alert("Usuário cadastrado com sucesso");
+      alert("Usuário atualizado com sucesso!");
 
-      navigate("/login");
+      navigate(`../profile/${user.id}`);
     } catch (error) {
       alert("Opa! Deu algo errado!");
     }
   };
+
+  useEffect(() => {
+    setName(user.name);
+    setEmail(user.email);
+    setApartment(user.apartment);
+  }, []);
 
   useEffect(() => {
     if (password !== confirmarPassword) {
@@ -49,7 +57,7 @@ export default function FormRegister() {
         <Card className="cardForm ">
           <Form className="formulario text-center" onSubmit={submit}>
             <img src="/assets/img/logo-colorido.png" alt="" />
-            <h3> CADASTRO</h3>
+            <h3>ATUALIZAR INFORMAÇÕES</h3>
             <Form.Group
               className=" boxform d-flex  p-3 "
               controlId="formBasicEmail"
@@ -100,8 +108,15 @@ export default function FormRegister() {
                 onChange={(e) => setApartment(e.target.value)}
               />
             </Form.Group>
+            {/* <Form.Group className="p-3 boxform" controlId="formBasicEmail">
+              <Form.Control
+                className="inputTexto"
+                type="text"
+                placeholder="link da foto"
+              />
+            </Form.Group> */}
             <Button className="button" type="submit">
-              cadastrar
+              atualizar
             </Button>
           </Form>
         </Card>

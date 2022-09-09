@@ -26,6 +26,7 @@ export default function Profile() {
   const { id } = useParams();
   const [userData, setUserData] = useState<UserData | null>(null);
   const [userMessage, setUserMessage] = useState<UserMessage[]>([]);
+  const [nPosts, setNPosts] = useState<number>(0);
 
   const fetchProfile = useCallback(async () => {
     const token = window.localStorage.getItem("token");
@@ -41,11 +42,12 @@ export default function Profile() {
   const fetchUserMessages = useCallback(async () => {
     const response = await listarTodasAsMensagensPorUsuario(id!)
       .then((res) => {
-        return res.data;
+        return res.data.reverse();
       })
       .catch((err) => console.log("erro", err));
 
     setUserMessage(response);
+    setNPosts(response.length);
   }, [setUserMessage]);
 
   useEffect(() => {
@@ -59,8 +61,8 @@ export default function Profile() {
   return (
     <>
       <NavbarParrot />
-      <Usuario userData={userData!} qtdMessages={userMessage.length} />
-      {userMessage.length ? (
+      <Usuario userData={userData!} qtdMessages={nPosts} />
+      {nPosts ? (
         userMessage.map((message) => (
           <PostsAll
             key={message.id}

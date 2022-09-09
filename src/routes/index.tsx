@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { RootStore } from "../store";
 import Cadastro from "../view/Cadastro";
+import EditarCadastro from "../view/EditarCadastro";
 import Feed from "../view/Feed";
 import Login from "../view/Login";
 import Profile from "../view/Profile";
@@ -29,6 +30,14 @@ export default function AppRoutes() {
           element={
             <PrivateRoute>
               <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/editar"
+          element={
+            <PrivateRoute>
+              <EditarCadastro />
             </PrivateRoute>
           }
         />

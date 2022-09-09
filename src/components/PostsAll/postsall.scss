@@ -4,15 +4,16 @@
 }
 
 .perfil-img {
-  width: 5rem;
+  width: 5.2rem;
   height: 5.2rem;
-  display: flex;
 }
-.details {
-  display: flex;
-}
-h4 {
+
+.link {
+  text-decoration: none;
   font-size: 18px;
   color: $accent-color;
   font-weight: 500;
+}
+.hora {
+  color: $primary-text;
 }
