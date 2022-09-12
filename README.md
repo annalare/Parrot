@@ -5,7 +5,7 @@
 ## 💻 Sobre o projeto
 
 <br>
- ## Projeto desenvolvido durante o desafio Hands On 4 oferecido pela Gama Academy. 
+ Projeto desenvolvido durante o desafio Hands On 4 oferecido pela Gama Academy. 
 - Este projeto apresenta um sistema white label, que seria uma rede social fornecida para que condominios incentivem a interação entre seus moradores.
 - Foi consumida uma  <a href="https://github.com/danilojpfreitas/Hands_On_04_Typeorm">API </a> para criar registros de users dos moradores, permitindo a criação, edição de perfil, posts de mensagens para os moradores e listagem de dados dos usuários, no estilo do conhecido Twitter.
 
